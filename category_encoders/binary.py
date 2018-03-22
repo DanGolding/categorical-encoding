@@ -194,7 +194,7 @@ class BinaryEncoder(BaseEstimator, TransformerMixin):
         if self._dim is None:
             raise ValueError('Must train encoder before it can be used to inverse_transform data')
 
-        X = self.binery_to_interger(X, self.cols)
+        X = self.binary_to_interger(X, self.cols)
 
         # then make sure that it is the right size
         if X.shape[1] != self._dim:
@@ -257,7 +257,7 @@ class BinaryEncoder(BaseEstimator, TransformerMixin):
 
         return X
 
-    def binery_to_interger(self, X, cols):
+    def binary_to_interger(self, X, cols):
         """
         Convert binary code as integers.
 
